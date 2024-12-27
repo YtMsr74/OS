@@ -78,6 +78,7 @@ int main() {
 			if (msgSize <= 0) {
 				printf("Connection %d closed\n", client);
 				close(client);
+				occupied = false;
 			}
 			else printf("Received %zd byte from %d\n", msgSize, client);
 		}
