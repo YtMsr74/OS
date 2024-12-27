@@ -48,9 +48,9 @@ int main() {
 
 		if (pselect(maxFD + 1, &fds, NULL, NULL, NULL, &origMask) == -1) {
 			if (errno == EINTR) {
-				printf("Sighup received\n");
 				if (wasSigHup) {
 					wasSigHup = 0;
+					printf("Sighup received\n");
 				}
 				continue;
 			}
